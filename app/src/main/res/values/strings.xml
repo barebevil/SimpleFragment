@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Simple Fragment</string>
+    <string name="title_main_fragment">Displaying main fragment</string>
+</resources>
