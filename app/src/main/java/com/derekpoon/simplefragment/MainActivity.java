@@ -1,9 +1,11 @@
 package com.derekpoon.simplefragment;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 /*
 Activities are navigation controllers
@@ -21,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //check for screen orientation
+        int screenOrientation = getResources().getConfiguration().orientation;
+
+        if (screenOrientation == Configuration.ORIENTATION_PORTRAIT) {
+            Log.d("Orientation", "Portrait");
+        } else {
+            Log.d("Orientation", "Landscape");
+        }
 
         //if the fragment exists
         if (savedInstanceState != null) {
